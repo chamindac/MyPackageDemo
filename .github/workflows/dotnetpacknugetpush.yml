@@ -22,5 +22,5 @@ jobs:
       - name: Build with dotnet
         run: dotnet build ${projectpath} --configuration release --no-restore
         
-      #- name: Pack as nuget with dotnet
-      #  run: dotnet build  NuGetPackageDemo.csproj --configuration release --no-restore
+      - name: Pack as nuget with dotnet
+        run: dotnet pack ${projectpath} --configuration ${buildconfiguration} --output ${outputpath} --version-suffix ${GITHUB_RUN_ID} --no-build --no-restore
