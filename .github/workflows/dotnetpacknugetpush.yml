@@ -23,9 +23,7 @@ jobs:
         run: dotnet restore ${projectpath}
 
       - name: Build with dotnet
-        run: dotnet build ${projectpath} --configuration ${buildconfiguration} --no-restore
+        run: dotnet build ${projectpath} --configuration ${buildconfiguration} --version-suffix ${runid} --no-restore
         
       - name: Pack as nuget with dotnet
-        run: |
-              echo ${runid}
-              dotnet pack ${projectpath} --configuration ${buildconfiguration} --output ${outputpath} --version-suffix ${runid} --no-build --no-restore
+        run: dotnet pack ${projectpath} --configuration ${buildconfiguration} --output ${outputpath} --version-suffix ${runid} --no-build --no-restore
