@@ -7,7 +7,7 @@
     <Authors>chamindac</Authors>
     <Company>GitHub</Company>
     <PackageDescription>NuGet package sample with dotnet pack!</PackageDescription>
-    <RepositoryUrl>https://github.com/OWNER/REPOSITORY</RepositoryUrl>
+    <RepositoryUrl>https://github.com/chamindac/MyPackageDemo.git</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
