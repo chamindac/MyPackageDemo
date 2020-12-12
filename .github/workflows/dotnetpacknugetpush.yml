@@ -9,6 +9,7 @@ jobs:
       projectpath: ./nugetdemo/mydotnetpacknugetpkg/mydotnetpacknugetpkg.csproj
       buildconfiguration: release
       outputpath: mypkgout
+      pkgsuffix: ${GITHUB_RUN_ID}
     
     steps:
       - uses: actions/checkout@v2.3.4
@@ -25,4 +26,6 @@ jobs:
         run: dotnet build ${projectpath} --configuration ${buildconfiguration} --no-restore
         
       - name: Pack as nuget with dotnet
-        run: dotnet pack ${projectpath} --configuration ${buildconfiguration} --output ${outputpath} --version-suffix ${GITHUB_RUN_ID} --no-build --no-restore
+        run: |
+              echo ${pkgsuffix}
+              dotnet pack ${projectpath} --configuration ${buildconfiguration} --output ${outputpath} --version-suffix ${pkgsuffix} --no-build --no-restore
