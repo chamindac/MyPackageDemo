@@ -31,4 +31,4 @@ jobs:
         run: dotnet pack ${projectpath} --configuration ${buildconfiguration} --output ${outputpath} --version-suffix ${runid} --no-build --no-restore
       
       - name: Publish Nuget to GitHub registry
-        run: dotnet nuget push ${outputpath}/*.nupkg --api-key ${GITHUB_TOKEN} --source $(githubnugetpackageregistry) --skip-duplicate --no-symbols true
+        run: dotnet nuget push ${outputpath}/*.nupkg --api-key ${githubtoken} --source ${githubnugetpackageregistry} --skip-duplicate --no-symbols true
