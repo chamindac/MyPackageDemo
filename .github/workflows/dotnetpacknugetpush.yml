@@ -1,0 +1,26 @@
+on: [push]
+
+jobs:
+  dotnetpack_nugetpush_job:
+    runs-on: ubuntu-latest
+    
+    env:
+      packagename: mydotnetpacknugetpkg
+      projectpath: ./nugetdemo/mydotnetpacknugetpkg/mydotnetpacknugetpkg.csproj
+    
+    steps:
+      - uses: actions/checkout@v2.3.4
+        
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '5.0.101'
+        
+      - name: Restore with dotnet
+        run: dotnet restore ${projectpath}
+
+      - name: Build with dotnet
+        run: dotnet build ${projectpath} --configuration release --no-restore
+        
+      #- name: Pack as nuget with dotnet
+      #  run: dotnet build  NuGetPackageDemo.csproj --configuration release --no-restore
