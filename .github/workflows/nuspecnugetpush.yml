@@ -7,7 +7,7 @@ jobs:
     env:
       packagename: mynuspecnugetpkg
       projectpath: ./nugetdemo/mynuspecnugetpkg/mynuspecnugetpkg.csproj
-      nuspecpath: ${buildoutputpath}/mynuspecnugetpkg.nuspec
+      nuspecpath: mybuildgout/mynuspecnugetpkg.nuspec
       buildconfiguration: release
       buildoutputpath: mybuildgout
       pkgoutputpath: mypkgout
