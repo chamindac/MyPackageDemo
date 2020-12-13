@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      packagename: mydotnetpacknugetpkg
       projectpath: ./nugetdemo/mydotnetpacknugetpkg/mydotnetpacknugetpkg.csproj
       buildconfiguration: release
       outputpath: mypkgout
