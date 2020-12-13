@@ -40,13 +40,10 @@ jobs:
                              <version>1.0.0</version>
                              <authors>chdemo</authors>
                              <description>NuGet package sample with nuspec!</description>
-                             <repository type="git" url="' + $github_repo_url +'"></repository>
+                             <repository type="git" url="' + $env:nuspecpath +'"></repository>
                            </metadata>
                          </package>';
-               $nuspec | out-file $nuspec_path -Encoding UTF8
-        env:
-          nuspec_path: ${nuspecpath}
-          github_repo_url: ${githubrepourl}
+               $nuspec | out-file $env:nuspecpath -Encoding UTF8
 
       - name: Setup NuGet.exe for use with actions
         uses: NuGet/setup-nuget@v1.0.5
