@@ -40,12 +40,13 @@ jobs:
                              <version>1.0.0</version>
                              <authors>chdemo</authors>
                              <description>NuGet package sample with nuspec!</description>
-                             <repository type="git" url="https://github.com/chamindac/MyPackageDemo.git"></repository>
+                             <repository type="git" url="' + $env:githubrepourl + '"></repository>
                            </metadata>
                            <files>
-                              <file src="*.dll" target="lib" />
+                              <file src="*.dll" target="lib\net5.0" />
                            </files>
                          </package>';
+               Write-Host $nuspec          
                $nuspec | out-file $env:nuspecpath -Encoding UTF8
 
       - name: Setup NuGet.exe for use with actions
