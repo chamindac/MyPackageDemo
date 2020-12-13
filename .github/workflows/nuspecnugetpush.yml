@@ -7,9 +7,9 @@ jobs:
     env:
       packagename: mynuspecnugetpkg
       projectpath: ./nugetdemo/mynuspecnugetpkg/mynuspecnugetpkg.csproj
+      nuspecpath: ${buildoutputpath}/mynuspecnugetpkg.nuspec
       buildconfiguration: release
       buildoutputpath: mybuildgout
-      nuspecpath: mybuildgout/mynuspecnugetpkg.nuspec
       pkgoutputpath: mypkgout
       runid: ${{github.run_id}}
       githubtoken: ${{ secrets.GITHUB_TOKEN }}
