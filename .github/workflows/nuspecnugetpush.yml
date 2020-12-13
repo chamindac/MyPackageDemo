@@ -40,8 +40,11 @@ jobs:
                              <version>1.0.0</version>
                              <authors>chdemo</authors>
                              <description>NuGet package sample with nuspec!</description>
-                             <repository type="git" url="' + $env:nuspecpath +'"></repository>
+                             <repository type="git" url="https://github.com/chamindac/MyPackageDemo.git"></repository>
                            </metadata>
+                           <files>
+                              <file src="*.dll" target="lib" />
+                           </files>
                          </package>';
                $nuspec | out-file $env:nuspecpath -Encoding UTF8
 
